@@ -2,138 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A Letter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Base Environment */
+        /* Eliminates all digital 'website' spacing */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            background-color: #e5e2d9; /* The 'table' surface */
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-            -webkit-font-smoothing: antialiased;
+        html, body {
+            height: 100%;
+            background-color: #fcfaf5; /* Warm, aged paper tone */
+            overflow-x: hidden;
         }
 
-        /* The Paper Sheet */
-        .paper {
-            background-color: #fcfaf5; /* The paper color */
-            width: 100%;
-            max-width: 600px;
-            min-height: 90vh;
-            padding: 60px 50px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow to lift paper */
-            overflow: hidden;
-        }
-
-        /* Subtle Grain on the Paper */
-        .paper::before {
+        /* The 'Paper Illusion' Layer */
+        body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.15;
             pointer-events: none;
-            background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+            z-index: 100;
+            /* Heavy handmade paper texture */
+            background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
+            opacity: 0.25; 
         }
 
-        /* Text Styling */
-        .content {
-            position: relative;
-            z-index: 2;
-            font-family: 'Libre Baskerville', serif;
+        /* The 'Soft Lighting' Layer - makes the edges feel like paper edges */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            background: radial-gradient(circle, rgba(255,255,255,0) 60%, rgba(0,0,0,0.08) 100%);
+        }
+
+        /* The Content */
+        .letter-container {
+            padding: 60px 35px;
+            font-family: 'Dancing Script', cursive;
             color: #2c2c2c;
-            line-height: 2;
-            font-size: 18px;
+            font-size: 24px; /* Large enough to feel like personal handwriting */
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
         }
 
-        .section {
-            margin-bottom: 3.5rem; /* Space between groups of thoughts */
+        .text-block {
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
         }
 
-        p {
-            margin-bottom: 1.2rem;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        /* The Closing */
-        .closing {
-            margin-top: 5rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 30px;
-        }
-
-        .closing p {
-            font-style: normal;
-            margin-bottom: 0.5rem;
-        }
-
+        /* Signature */
         .signature {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.6;
-            letter-spacing: 1px;
+            margin-top: 5rem;
+            padding-bottom: 80px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 480px) {
-            body { padding: 20px 15px; }
-            .paper { padding: 50px 30px; }
-            .content { font-size: 17px; }
-        }
     </style>
 </head>
 <body>
 
-    <div class="paper">
-        <div class="content">
-            
-            <div class="section">
-                <p>I didn’t want to say too much.</p>
-                <p>Some feelings lose their meaning when they’re rushed.</p>
-            </div>
-
-            <div class="section">
-                <p>So this is written slowly,</p>
-                <p>the way old letters were meant to be read.</p>
-            </div>
-
-            <div class="section">
-                <p>Not everything meaningful needs to be explained.</p>
-                <p>Some things are understood quietly.</p>
-            </div>
-
-            <div class="section">
-                <p>You were never loud in my life.</p>
-                <p>Yet your presence changed the way silence felt.</p>
-            </div>
-
-            <div class="section">
-                <p>Even now, that quiet remains.</p>
-                <p>Not heavy. Not demanding. Just there.</p>
-            </div>
-
-            <div class="section">
-                <p>This isn’t about holding on.</p>
-                <p>And it isn’t about asking for anything.</p>
-            </div>
-
-            <div class="section">
-                <p>It’s simply about being honest</p>
-                <p>without making things complicated.</p>
-            </div>
-
-            <div class="closing">
-                <p>Some connections don’t need names.</p>
-                <p>They just need respect.</p>
-                <p class="signature">Take care of yourself.</p>
-            </div>
-
+    <main class="letter-container">
+        
+        <div class="text-block">
+            I didn’t want to say too much.
+            Some feelings lose their meaning when they’re rushed.
         </div>
-    </div>
+
+        <div class="text-block">
+            So this is written slowly,
+            the way old letters were meant to be read.
+        </div>
+
+        <div class="text-block">
+            Not everything meaningful needs to be explained.
+            Some things are understood quietly.
+        </div>
+
+        <div class="text-block">
+            You were never loud in my life.
+            Yet your presence changed the way silence felt.
+        </div>
+
+        <div class="text-block">
+            Even now, that quiet remains.
+            Not heavy. Not demanding. Just there.
+        </div>
+
+        <div class="text-block">
+            This isn’t about holding on.
+            And it isn’t about asking for anything.
+        </div>
+
+        <div class="text-block">
+            It’s simply about being honest
+            without making things complicated.
+        </div>
+
+        <div class="text-block">
+            Some connections don’t need names.
+            They just need respect.
+        </div>
+
+        <div class="signature">
+            By Deep
+        </div>
+
+    </main>
 
 </body>
 </html>
