@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A Letter for You</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* 1. Reset and Lock Screen */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,69 +12,62 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Stops all scrolling */
+            overflow: hidden; /* Fixes Chrome scrolling issues */
             background-color: #fcfaf5;
         }
 
-        /* 2. Dynamic Background Image */
+        /* 2. Background Image Setup */
         .main-wrapper {
             height: 100vh;
             width: 100vw;
             background: url('v860-aew-57.jpg') no-repeat center center;
-            background-size: cover; /* Ensures image fills screen without distortion */
+            background-size: cover;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; /* Keeps letter in the vertical center */
         }
 
-        /* 3. The "Safe Zone" - Keeps text on the paper part of your image */
+        /* 3. The Letter Container (The 'Paper' Illusion) */
         .letter-content {
-            width: 85%; /* Leaves room for the floral edges of your image */
-            max-width: 400px;
-            height: 80%; /* Keeps text away from top/bottom edges */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
+            width: 80%; /* Shrinks width to stay inside floral borders */
+            max-width: 360px;
+            padding: 20px;
             font-family: 'Dancing Script', cursive;
             color: #2c2c2c;
-            /* Dynamic font sizing: scales with screen height */
-            font-size: clamp(18px, 4.2vh, 26px); 
-            line-height: 1.45;
+            /* Smaller, more delicate font size */
+            font-size: 19px; 
+            line-height: 1.5;
+            text-align: left; /* Aligned left like a real letter */
             z-index: 10;
         }
 
         .greeting {
-            font-size: 1.2em;
-            font-weight: 700;
-            margin-bottom: 0.4em;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 1em;
         }
 
         .paragraph {
-            margin-bottom: 0.8em;
+            margin-bottom: 1em;
         }
 
         .signature {
-            margin-top: 1em;
-            font-size: 1.3em;
-            font-weight: 700;
+            margin-top: 2em;
+            font-size: 1.2em;
+            font-weight: 600;
             color: #1a1a1a;
         }
 
-        /* Subtle overlay to help text pop if image is bright */
-        .tint {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: 1;
+        /* Responsive font shrink for very small phones */
+        @media (max-height: 700px) {
+            .letter-content { font-size: 17px; line-height: 1.4; }
+            .paragraph { margin-bottom: 0.8em; }
         }
     </style>
 </head>
 <body>
 
     <div class="main-wrapper">
-        <div class="tint"></div>
-        
         <main class="letter-content">
             <div class="greeting">Hi Deep,</div>
 
