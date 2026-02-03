@@ -4,107 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A Letter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        /* Eliminates all digital 'website' spacing */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html, body {
+        body, html {
             height: 100%;
-            background-color: #fcfaf5; /* Warm, aged paper tone */
+            width: 100%;
+            /* This ensures the image covers the whole phone screen */
+            background: url('v860-aew-57.jpg') no-repeat center center fixed;
+            background-size: cover;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
         }
 
-        /* The 'Paper Illusion' Layer */
-        body::before {
-            content: "";
-            position: fixed;
+        /* Semi-transparent overlay to make sure the handwriting is easy to read */
+        .overlay {
+            position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 100;
-            /* Heavy handmade paper texture */
-            background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
-            opacity: 0.25; 
+            background: rgba(252, 250, 245, 0.2); /* Very light tint */
+            z-index: 1;
         }
 
-        /* The 'Soft Lighting' Layer - makes the edges feel like paper edges */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 99;
-            background: radial-gradient(circle, rgba(255,255,255,0) 60%, rgba(0,0,0,0.08) 100%);
-        }
-
-        /* The Content */
-        .letter-container {
-            padding: 60px 35px;
-            font-family: 'Dancing Script', cursive;
-            color: #2c2c2c;
-            font-size: 24px; /* Large enough to feel like personal handwriting */
-            line-height: 1.6;
-            min-height: 100vh;
+        .letter-content {
             position: relative;
             z-index: 10;
+            width: 100%;
+            max-width: 500px;
+            padding: 80px 40px;
+            /* Using a natural handwriting font */
+            font-family: 'Dancing Script', cursive;
+            color: #2c2c2c;
+            font-size: 24px;
+            line-height: 1.6;
+            text-shadow: 0px 0px 1px rgba(255,255,255,0.5); /* Helps text pop off image */
         }
 
-        .text-block {
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
+        .paragraph {
+            margin-bottom: 2rem;
         }
 
-        /* Signature */
         .signature {
-            margin-top: 5rem;
-            padding-bottom: 80px;
-            font-size: 28px;
-            font-weight: 600;
+            margin-top: 4rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
             color: #1a1a1a;
+            padding-bottom: 100px;
         }
 
+        /* Mobile specific font size */
+        @media (max-width: 480px) {
+            .letter-content { font-size: 22px; padding: 60px 30px; }
+        }
     </style>
 </head>
 <body>
 
-    <main class="letter-container">
+    <div class="overlay"></div>
+
+    <main class="letter-content">
         
-        <div class="text-block">
+        <div class="paragraph">
             I didn’t want to say too much.
             Some feelings lose their meaning when they’re rushed.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             So this is written slowly,
             the way old letters were meant to be read.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             Not everything meaningful needs to be explained.
             Some things are understood quietly.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             You were never loud in my life.
             Yet your presence changed the way silence felt.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             Even now, that quiet remains.
             Not heavy. Not demanding. Just there.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             This isn’t about holding on.
             And it isn’t about asking for anything.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             It’s simply about being honest
             without making things complicated.
         </div>
 
-        <div class="text-block">
+        <div class="paragraph">
             Some connections don’t need names.
             They just need respect.
         </div>
