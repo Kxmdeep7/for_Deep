@@ -3,59 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>A Letter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>A Letter for You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Great+Vibes&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body, html {
             height: 100%;
             width: 100%;
-            /* This ensures the image covers the whole phone screen */
+            /* Uses your floral paper image as the full background */
             background: url('v860-aew-57.jpg') no-repeat center center fixed;
             background-size: cover;
-            overflow-x: hidden;
             display: flex;
             justify-content: center;
+            overflow-x: hidden;
         }
 
-        /* Semi-transparent overlay to make sure the handwriting is easy to read */
+        /* Subtle overlay to ensure the text is perfectly legible */
         .overlay {
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(252, 250, 245, 0.2); /* Very light tint */
+            background: rgba(255, 255, 255, 0.1); 
             z-index: 1;
         }
 
-        .letter-content {
+        .letter-box {
             position: relative;
             z-index: 10;
             width: 100%;
             max-width: 500px;
-            padding: 80px 40px;
-            /* Using a natural handwriting font */
+            padding: 70px 35px;
+            /* Personal handwriting font */
             font-family: 'Dancing Script', cursive;
-            color: #2c2c2c;
+            color: #2c2c2c; 
             font-size: 24px;
             line-height: 1.6;
-            text-shadow: 0px 0px 1px rgba(255,255,255,0.5); /* Helps text pop off image */
+        }
+
+        .greeting {
+            font-size: 28px;
+            margin-bottom: 2rem;
+            font-weight: 600;
         }
 
         .paragraph {
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .closing-wish {
+            margin-top: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 19px;
+            opacity: 0.85;
         }
 
         .signature {
-            margin-top: 4rem;
+            margin-top: 2rem;
             font-family: 'Great Vibes', cursive;
-            font-size: 36px;
+            font-size: 42px;
             color: #1a1a1a;
-            padding-bottom: 100px;
+            padding-bottom: 80px;
+            line-height: 1.2;
         }
 
-        /* Mobile specific font size */
         @media (max-width: 480px) {
-            .letter-content { font-size: 22px; padding: 60px 30px; }
+            .letter-box { padding: 60px 25px; font-size: 22px; }
         }
     </style>
 </head>
@@ -63,50 +76,32 @@
 
     <div class="overlay"></div>
 
-    <main class="letter-content">
+    <main class="letter-box">
         
+        <div class="greeting">Hi Deep,</div>
+
         <div class="paragraph">
-            I didn’t want to say too much.
-            Some feelings lose their meaning when they’re rushed.
+            I’ve been thinking about how to say this for a while, but I wanted to wait until the words felt right. I didn’t want to rush it, because some things are better said slowly.
         </div>
 
         <div class="paragraph">
-            So this is written slowly,
-            the way old letters were meant to be read.
+            I’ve always felt there was something rare about you. You have this quiet strength that doesn't need to be loud to be noticed. Being around you just makes the world feel a bit calmer, and I've always valued that about you.
         </div>
 
         <div class="paragraph">
-            Not everything meaningful needs to be explained.
-            Some things are understood quietly.
+            Even when things are quiet, I still feel that influence. It’s a good kind of quiet—the kind that stays with you and changes the way everything else feels.
         </div>
 
         <div class="paragraph">
-            You were never loud in my life.
-            Yet your presence changed the way silence felt.
+            I’m not writing this to ask for anything or to complicate things. I just wanted to be honest and acknowledge the person you are. Some connections don’t need a label; they just need to be met with a sincere thank you.
         </div>
 
-        <div class="paragraph">
-            Even now, that quiet remains.
-            Not heavy. Not demanding. Just there.
-        </div>
-
-        <div class="paragraph">
-            This isn’t about holding on.
-            And it isn’t about asking for anything.
-        </div>
-
-        <div class="paragraph">
-            It’s simply about being honest
-            without making things complicated.
-        </div>
-
-        <div class="paragraph">
-            Some connections don’t need names.
-            They just need respect.
+        <div class="closing-wish">
+            I truly hope life is being kind to you.
         </div>
 
         <div class="signature">
-            By Deep
+            In shared silence,
         </div>
 
     </main>
